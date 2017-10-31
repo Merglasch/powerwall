@@ -7,4 +7,4 @@ data/old/
 data/*/*.dat
 .vs/
 x64/
-*.gen
+resources/shader/**/*.gen
