@@ -211,19 +211,6 @@ namespace viscom {
                 if (ImGui::SliderFloat("Speed", &outInfluenceSpeed, 0.2f, 1.0f)) {
                     outerInfluence_->setBaseSpeed(outInfluenceSpeed);
                 }                
-                
-                ImGui::Spacing();
-                if (ImGui::SliderFloat("sunX", &sunX, -10.0f, 10.0f)) {
-                    lightInfo->sun->direction.x = sunX;
-                }
-                ImGui::Spacing();
-                if (ImGui::SliderFloat("sunY", &sunY, -10.0f, 10.0f)) {
-                    lightInfo->sun->direction.y = sunY;
-                }
-                ImGui::Spacing();
-                if (ImGui::SliderFloat("sunZ", &sunZ, -10.0f, 0.0f)) {
-                    lightInfo->sun->direction.z = sunZ;
-                }
 
                 ImGui::Spacing();
                 ImGui::Text("Inner Influence");
@@ -268,6 +255,23 @@ namespace viscom {
                     ImGui::Text("Slave %i: %i", msg->clientId, msg->transitionNr);
                 }
             }
+
+            ImGui::Spacing();
+            if(ImGui::CollapsingHeader("Sun Position"))
+            {
+                if (ImGui::SliderFloat("sunX", &sunX, -10.0f, 10.0f)) {
+                    lightInfo->sun->direction.x = sunX;
+                }
+                ImGui::Spacing();
+                if (ImGui::SliderFloat("sunY", &sunY, -10.0f, 10.0f)) {
+                    lightInfo->sun->direction.y = sunY;
+                }
+                ImGui::Spacing();
+                if (ImGui::SliderFloat("sunZ", &sunZ, -10.0f, 0.0f)) {
+                    lightInfo->sun->direction.z = sunZ;
+                }
+            }
+
 
             ImGui::Spacing();
             gameLost_ ? ImGui::Text("Game Lost: yes"):ImGui::Text("Game Lost: no");

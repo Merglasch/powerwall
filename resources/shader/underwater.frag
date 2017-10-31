@@ -121,9 +121,6 @@ void main() {
 		color = vec4(1);
 		return;
 	}
-	//color = texture(materal.diffuseTex, waterTexCoords);
-	//color = texture(material.diffuseTex, vTexCoords);
-
 
 	vec3 norm = normalize(vNormal);
 	vec3 viewDir = normalize(viewPos-vPosition);
@@ -163,10 +160,6 @@ void main() {
     // add underwater fog
     color += diste * vec4(-0.09f,-0.04f,-0.04f,1.0f) + vec4(0.0f,0.20f,0.20f,0.0f); 
 
-    //color += diste * vec4(0.0f,0.2f,0.25f,0.0f); // make it more blue and green
-    //color += pow(distance(vPosition,viewPos)*0.8f,4) * 0.001f * vec4(0.0f,0.15f,0.25f,0.0f);
-    //float tmpcol = max(1.0f,pow(distance(vPosition,viewPos)*0.8f,4) * 0.01f);
-    //color = (color / tmpcol) + vec4(0.0f,0.2f,0.3f,0.0f) * tmpcol * 0.07f + vec4(0.0f,0.1f,0.25f,0.0f);// * vec4(0.0f,0.15f,0.25f,0.0f);
 }
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir){

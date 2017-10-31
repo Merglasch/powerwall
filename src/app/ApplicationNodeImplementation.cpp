@@ -294,10 +294,6 @@ namespace viscom {
         glDepthMask(GL_TRUE);
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LESS);
-        //glEnable(GL_POLYGON_OFFSET_FILL);
-        //glEnable(GL_POLYGON_OFFSET_LINE);
-        //glEnable(GL_POLYGON_OFFSET_POINT);
-        //glPolygonOffsetClampEXT(1.1, 10.0,20.0);
         DrawScene(viewPos, sm_lightmatrix_, sm_lightmatrix_, lightInfo);
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
@@ -314,7 +310,6 @@ namespace viscom {
 
 
         fbo.DrawToFBO([&]() {
-            //screenfilling_quad_.render(sm_->id); return;
             glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due to depth test.
                                       // clear all relevant buffers
             glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessery actually, since we won't be able to see behind the quad anyways)
@@ -387,7 +382,6 @@ namespace viscom {
         meshpool_.cleanup();
         delete sm_;
         delete sm_fbo_;
-        //delete backgroundMesh_;
         delete waterMesh_;
         delete lightInfo->sun;
         delete lightInfo->outerInfLights;
