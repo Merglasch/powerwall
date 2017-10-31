@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<WallCorners type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    726. 514. 4181. 302. 4223. 3237. 724. 3161.</data></WallCorners>
+ <!-- resumed -->
+
+<LocalLowHighVP0 type_id="opencv-matrix">
+  <rows>2</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -2.47355485e+000 -1.00552559e+000 3.96806985e-001 1.58358842e-001</data></LocalLowHighVP0>
+ <!-- resumed -->
+
+<quad_corners0 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -6.87854626e-005 1.05767560e+000 1.01801956e+000 9.98960733e-001
+    9.99983609e-001 -9.08089045e-004 -9.87315651e-009 -3.32143785e-010</data></quad_corners0>
+ <!-- resumed -->
+
+<TexCoordinates0 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"3f"</dt>
+  <data>
+    0. 0. 2.03792334e+000 1.92855310e+000 0. 1.92855310e+000
+    1.96346223e+000 1.96346223e+000 1.96346223e+000 0. 2.07694435e+000
+    2.07694435e+000</data></TexCoordinates0>
+ <!-- resumed -->
+
+<LocalLowHighVP1 type_id="opencv-matrix">
+  <rows>2</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -2.47057676e+000 -1.57054842e-001 5.54234922e-001 1.09514916e+000</data></LocalLowHighVP1>
+ <!-- resumed -->
+
+<quad_corners1 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -1.63887087e-002 9.99924064e-001 9.99856353e-001 1.00463641e+000
+    1.03091884e+000 2.14510807e-003 1.13582297e-003 -6.93003535e-002</data></quad_corners1>
+ <!-- resumed -->
+
+<TexCoordinates1 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"3f"</dt>
+  <data>
+    0. 0. 2.08184958e+000 1.95204759e+000 0. 1.95204759e+000
+    1.92434287e+000 1.92434287e+000 1.92434287e+000 0. 2.05036783e+000
+    2.05036783e+000</data></TexCoordinates1>
+ <!-- resumed -->
+
+<LocalLowHighVP2 type_id="opencv-matrix">
+  <rows>2</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -6.39494598e-001 -1.46337181e-001 2.55504775e+000 1.20522070e+000</data></LocalLowHighVP2>
+ <!-- resumed -->
+
+<quad_corners2 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -2.97012646e-003 1.11146212e+000 1. 9.99999940e-001 1.03611541e+000
+    9.10464500e-004 6.73860995e-005 -2.52082348e-002</data></quad_corners2>
+ <!-- resumed -->
+
+<TexCoordinates2 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"3f"</dt>
+  <data>
+    0. 0. 2.18004751e+000 1.90904713e+000 0. 1.90904713e+000
+    1.84742343e+000 1.84742343e+000 1.84742343e+000 0. 2.10005307e+000
+    2.10005307e+000</data></TexCoordinates2>
+ <!-- resumed -->
+
+<LocalLowHighVP3 type_id="opencv-matrix">
+  <rows>2</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -5.33043921e-001 -1.09556603e+000 2.47830176e+000 1.29281148e-001</data></LocalLowHighVP3>
+ <!-- resumed -->
+
+<quad_corners3 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -3.15622240e-002 1.06829548e+000 1. 1. 1.01077425e+000
+    7.45401077e-004 2.03986838e-003 -6.90436438e-002</data></quad_corners3>
+ <!-- resumed -->
+
+<TexCoordinates3 type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"3f"</dt>
+  <data>
+    0. 0. 2.11607170e+000 1.86147308e+000 0. 1.86147308e+000
+    1.89600003e+000 1.89600003e+000 1.89600003e+000 0. 2.16080236e+000
+    2.16080236e+000</data></TexCoordinates3>
+ <!-- resumed -->
+
+<ViewPlaneCoordinates type_id="opencv-matrix">
+  <rows>16</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    -1.39127696e+000 9.60239395e-002 1.93006009e-001 1.58358842e-001
+    2.23203927e-001 -1.00444937e+000 -1.39137459e+000 -1.00552559e+000
+    -1.36392152e+000 1.09514916e+000 3.11757147e-001 1.08927488e+000
+    2.57383227e-001 -1.57054842e-001 -1.38969946e+000 -7.70437866e-002
+    -3.55517060e-001 1.06847060e+000 1.43721437e+000 1.20522070e+000
+    1.36603582e+000 -1.46337181e-001 -3.59715700e-001 -1.17439650e-001
+    -2.56982923e-001 5.89884184e-002 1.39404476e+000 1.29281148e-001
+    1.37350786e+000 -1.09556603e+000 -2.99837202e-001 -1.01973557e+000</data></ViewPlaneCoordinates>
+ <!-- resumed -->
+
+<projectorCorners type_id="opencv-matrix">
+  <rows>16</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    1.23725937e+002 1.71735938e+003 2.70974609e+003 1.56766907e+003
+    2.77649585e+003 3.21192188e+003 1.18744331e+002 3.15511084e+003
+    1.69138428e+002 4.25923279e+002 2.90944824e+003 2.55279312e+002
+    2.82760596e+003 2.00950549e+003 1.25351837e+002 1.94202893e+003
+    1.76277234e+003 3.57920990e+002 5.03302881e+003 -5.47197113e+001
+    4.92584229e+003 1.96503479e+003 1.76181604e+003 1.96970508e+003
+    1.93342017e+003 1.72467139e+003 4.97491211e+003 1.55088794e+003
+    4.96594434e+003 3.39819507e+003 1.86743958e+003 3.21320923e+003</data></projectorCorners>
+</opencv_storage>

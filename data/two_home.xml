@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <Cluster masterAddress="192.168.178.22" externalControlPort="20500">
-	<Node address="192.168.178.23" port="20401">
+	<Node address="192.168.178.22" port="20401">
 		<Window fullScreen="false" monitor="0">
 			<Stereo type="none"/>
 			<Size x="960" y="540"/>
@@ -16,7 +16,7 @@
 			</Viewport>
 		</Window>
 	</Node>
-	<Node address="192.168.178.22" port="20402">
+	<Node address="192.168.178.23" port="20402">
 		<Window fullScreen="false" monitor="0">
 			<Stereo type="none"/>
 			<Size x="1920" y="1080"/>

@@ -1,0 +1,81 @@
+#ifndef ROOM_SEGMENT_MESH_POOL_H
+#define ROOM_SEGMENT_MESH_POOL_H
+
+#include <memory>
+#include <stdexcept>
+#include <functional>
+#include "core/gfx/mesh/MeshRenderable.h"
+#include "../Vertices.h"
+#include "InteractiveGrid.h"
+#include "RoomSegmentMesh.h"
+
+/* Management class for room segment meshes and mesh instance shader
+ * Mesh instances of one type can be arbitrary distributed across a grid.
+ * There can be several types of meshes (room walls, corners, inner influence etc.).
+ * The mesh pool maps build states to meshes.
+ * The build state bitfield is treated as simple numeric index into the mesh container.
+ * An interactive grid that received a build call uses the pool to get an appropriate mesh for a build state.
+ * Since build state is a bitfield, a filter method is provided, that finds mapped meshes in a given bitfield.
+ * Usage notes:
+ * Mesh pool exists on all SGCT nodes
+ * Used by nodes to create meshes (each including vertex and instance buffer)
+ * Used by MeshInstanceGrid to get appropriate mesh for build state
+ * Used by nodes to render all meshes by a single call
+*/
+class RoomSegmentMeshPool {
+	// Map build state to mesh variations (different build states can point to the same mesh)
+	std::unordered_map<GLuint, std::vector<RoomSegmentMesh*>> meshes_;
+	// Store a unique build state as key for each mesh
+	std::vector<GLuint> render_list_;
+	// Hold pointers to all meshes to control cleanup
+	std::set<std::shared_ptr<viscom::Mesh>> owned_resources_;
+	// The shader used by all meshes
+	std::shared_ptr<viscom::GPUProgram> shader_;
+	// Uniforms
+	std::vector<GLint> uniform_locations_;
+	std::vector<std::function<void(GLint)>> uniform_callbacks_;
+	GLint depth_pass_flag_uniform_location_;
+	GLint debug_mode_flag_uniform_location_;
+public:
+	RoomSegmentMeshPool(const size_t MAX_INSTANCES);
+	~RoomSegmentMeshPool();
+	// Functions for initialization
+<<<<<<< HEAD
+	void loadShader(viscom::GPUProgramManager mgr, std::shared_ptr<viscom::GPUProgram> instanceShader);
+=======
+	void loadShader(viscom::GPUProgramManager mgr);
+    // Map a mesh to (multiple) build states, or (multiple) comibinations
+    // (note: if actually occuring combinations are forgotten, getMesh will fail, except combinations with orientation bits, which are ignored)
+>>>>>>> develop
+	void addMesh(std::vector<GLuint> types, std::shared_ptr<viscom::Mesh> mesh);
+	void addMeshVariations(std::vector<GLuint> types, std::vector<std::shared_ptr<viscom::Mesh>> mesh_variations);
+    // Function for uniform shader data
+    void updateUniformEveryFrame(std::string uniform_name, std::function<void(GLint)> update_func);
+	// Get mapped mesh from build state (since build state is treated as simple index, combinations must match exactly)
+	RoomSegmentMesh* getMeshOfType(GLuint type);
+    // Finds overlaps of given buildstate bits with available mesh mappings and calls back for each mesh
+    void filter(GLuint buildStateBits, std::function<void(GLuint)> callback);
+	// Functions for rendering
+	void renderAllMeshes(glm::mat4& view_projection, GLint isDepthPass = 0, GLint isDebugMode = 0, LightInfo* lightInfo = nullptr, glm::vec3& viewPos = glm::vec3(0, 0, 4));
+	void renderAllMeshesExcept(glm::mat4& view_projection, GLuint type_not_to_render, GLint isDepthPass = 0, GLint isDebugMode = 0, LightInfo* lightInfo = nullptr, glm::vec3& viewPos = glm::vec3(0, 0, 4));
+	void cleanup();
+    // Functions for SGCT synchronization
+    void preSync(); // master
+    void encode(); // master
+    void decode(); // slave
+    void updateSyncedSlave();
+    void updateSyncedMaster();
+	// Getter
+	GLint getUniformLocation(size_t index);
+	GLuint getShaderID();
+private:
+	// Pool allocation bytes based on estimated number of instances
+	const size_t POOL_ALLOC_BYTES_CORNERS;
+	const size_t POOL_ALLOC_BYTES_WALLS;
+	const size_t POOL_ALLOC_BYTES_FLOORS;
+	const size_t POOL_ALLOC_BYTES_OUTER_INFLUENCE;
+	const size_t POOL_ALLOC_BYTES_DEFAULT;
+	size_t determinePoolAllocationBytes(GLuint type);
+};
+
+#endif
